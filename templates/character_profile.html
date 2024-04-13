@@ -1,0 +1,35 @@
+{%extends 'base.html'%} {%block title%}Character's profile{%endblock%} {%block
+style%}
+<link rel="stylesheet" href="/static/character_profile.css" />
+{%endblock%} {%block content%}
+<div class="container big-div">
+  <div class="character-div">
+    <img
+      class="character-thumbnail"
+      src="{{character.thumbnail}}"
+      alt="character's thumbnail"
+    />
+    <div class="char-info">
+      <h2>{{character.name}}</h2>
+
+      <button class="like-unlike" data-id="{{character.id}}">
+        {%if liked%}
+        <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+        {%else%}
+        <i class="fa-regular fa-star"></i>
+        {%endif%}
+      </button>
+
+      <p>{{character.description}}</p>
+      <h3>Comics:</h3>
+      <ul>
+        {%for each in comics%}
+        <li>{{each.title}}</li>
+        {%endfor%}
+      </ul>
+    </div>
+  </div>
+</div>
+{%endblock%} {%block script%}
+<script src="/static/character_profile.js"></script>
+{%endblock%}

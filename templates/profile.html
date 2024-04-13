@@ -1,0 +1,43 @@
+{%extends 'base.html'%}{%block title%}My profile{%endblock%} {%block style%}
+<link rel="stylesheet" href="/static/user_profile.css" />
+{%endblock%} {%block content%}
+<div class="container big-div">
+  <div>
+    <div class="user-info">
+      <img id="profile-pic" src="{{user.image_url}}" alt="profile-pic" />
+      <div class="user-name-bio">
+        <p class="details-description">username:</p>
+        <h1 class="details-description">{{user.username}}</h1>
+        <p class="details-description">email:</p>
+        <h3 class="details-description">{{user.email}}</h3>
+        <p class="details-description">name:</p>
+        <h3 class="details-description">
+          {{user.first_name}} {{user.last_name}}
+        </h3>
+        <p class="details-description">bio:</p>
+        <p class="details-description">{{user.bio}}</p>
+      </div>
+    </div>
+    {%if authorization%}
+    <div class="profile-btn-div">
+      <form action="/users/{{user.username}}/edit">
+        <button class="btn btn-primary edit-btn">Edit</button>
+      </form>
+      <form action="/users/{{user.username}}/delete" method="POST">
+        <button class="btn btn-danger delete-btn">Delete Profile</button>
+      </form>
+      <form action="/users/{{user.username}}/post">
+        <button class="btn btn-secondary add-btn">Add Post</button>
+      </form>
+    </div>
+    {%if in_post_page%}
+    <a href="/users/{{user.username}}/favorite/characters"
+      >Favorite characters</a
+    >
+    {%endif%} {%if in_fav_page%}
+    <a href="/users/{{user.username}}">Posts</a>
+    {%endif%}
+  </div>
+  {%endif%} {%block user_details%}{%endblock%}
+</div>
+{%endblock%}

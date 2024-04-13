@@ -1,0 +1,70 @@
+.big-div {
+  background-color: rgb(30, 30, 30);
+  margin-top: 40px;
+  color: white;
+  border-radius: 20px;
+  padding: 10px 10px;
+  height: 700px;
+  width: 500px;
+  overflow: scroll;
+}
+/* designing the scrollbar */
+/* for Chrome and Safari */
+::-webkit-scrollbar {
+  width: 1px;
+  height: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(128, 128, 128, 0);
+  border-radius: 10px;
+  height: 10px;
+}
+.post-div {
+  border: solid rgba(128, 128, 128, 0.5) 1px;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  padding: 4px;
+  padding-bottom: 10px;
+  box-shadow: 0 0 5px rgba(128, 128, 128, 0.5);
+  transition: box-shadow 0.3s ease;
+}
+.post-div:hover {
+  box-shadow: 0 0 15px rgba(128, 128, 128, 0.7);
+}
+.like-unlike {
+  border: none;
+  background-color: rgb(30, 30, 30);
+}
+.comment-div {
+  border-radius: 4px;
+  margin-bottom: 5px;
+  padding: 4px;
+  box-shadow: 0 0 5px rgba(0, 249, 253, 0.5);
+  word-break: break-word;
+  transition: box-shadow 0.3s ease;
+}
+.comment-div:hover {
+  box-shadow: 0 0 10px rgba(0, 249, 253, 0.694);
+}
+.comment-post-btn {
+  margin-top: 10px;
+}
+
+@media (max-width: 390px) {
+  .big-div {
+    height: 720px;
+    width: 350px;
+  }
+  .comment-h2 {
+    margin-top: 10px;
+  }
+  .comment-div {
+    border-radius: 4px;
+    margin-bottom: 10px;
+    padding: 4px;
+    box-shadow: 0 0 5px rgba(0, 249, 253, 0.5);
+    word-break: break-word;
+    transition: box-shadow 0.3s ease;
+  }
+}

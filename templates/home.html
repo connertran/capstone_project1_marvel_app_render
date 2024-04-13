@@ -1,0 +1,44 @@
+{%extends 'base.html'%} {%block title%}Homepage{%endblock%} {%block style%}
+<link rel="stylesheet" href="/static/home.css" />
+{%endblock%}{%block content%}
+<div class="container big-div">
+  <h1>Marvel App</h1>
+  <form action="/get-character" method="POST" class="character-search">
+    <input
+      type="text"
+      placeholder="Enter a Marvel character"
+      name="characterName"
+      class="character-search-input"
+    />
+  </form>
+
+  {%for char in characters%}
+  <div class="character-div">
+    <img
+      class="character-thumbnail"
+      src="{{char.thumbnail}}"
+      alt="character's thumbnail"
+    />
+    <div class="character-info-div">
+      <button class="like-unlike" data-id="{{char.id}}">
+        {%if char.id in likes%}
+        <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+        {%else%}
+        <i class="fa-regular fa-star"></i>
+        {%endif%}
+      </button>
+
+      <h2 class="char-name">{{char.name}}</h2>
+      <p>{{short(char.description)}}</p>
+      <form action="/characters/{{char.id}}">
+        <button class="btn btn-outline-warning details-btn" type="submit">
+          Details
+        </button>
+      </form>
+    </div>
+  </div>
+  {%endfor%}
+</div>
+{%endblock%} {%block script%}
+<script src="/static/home.js"></script>
+{%endblock%}

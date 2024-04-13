@@ -1,0 +1,69 @@
+.big-div {
+  background-color: rgb(30, 30, 30);
+  margin-top: 40px;
+  color: white;
+  border-radius: 20px;
+  padding: 10px 10px;
+  width: 500px;
+  max-height: 400px;
+  overflow: scroll;
+}
+.submit-btn {
+  background-color: rgb(236, 29, 36);
+  color: white;
+  font-weight: bold;
+  border-style: none;
+  width: 75px;
+  height: 35px;
+  border-radius: 15px;
+  margin: 10px 0;
+  transition: background-color 0.3s ease;
+}
+.submit-btn:hover {
+  background-color: rgb(238, 74, 79);
+}
+.submit-btn:active {
+  background-color: rgba(229, 84, 89, 0.797);
+}
+.wtf-color {
+  background-color: rgb(103, 102, 102);
+  border-style: none;
+  transition: background-color 0.3s ease;
+}
+
+.wtf-color:focus {
+  background-color: rgb(124, 122, 122);
+}
+
+/* designing the scrollbar */
+/* for Chrome and Safari */
+::-webkit-scrollbar {
+  width: 1px;
+  height: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(128, 128, 128, 0);
+  border-radius: 10px;
+  height: 10px;
+}
+
+.login-link-div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+
+@media (max-width: 390px) {
+  .big-div {
+    background-color: rgb(30, 30, 30);
+    margin-top: 40px;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 10px;
+    width: 350px;
+    max-height: 400px;
+    overflow: scroll;
+  }
+}

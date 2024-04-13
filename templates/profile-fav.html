@@ -1,0 +1,34 @@
+{%extends 'profile.html'%} {%block user_details%}
+<div class="character-section">
+  <h2>Favorite Characters:</h2>
+  {%if liked_characters == []%}
+  <p>No characters.</p>
+  {%endif%} {%for char in liked_characters%}
+  <div class="character-div">
+    <img
+      class="character-thumbnail"
+      src="{{char.character.thumbnail}}"
+      alt="character's thumbnail"
+    />
+    {%if authorization%}
+
+    <button class="like-unlike" data-id="{{char.character.id}}">
+      {%if char.character.id in likes%}
+      <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+      {%else%}
+      <i class="fa-regular fa-star"></i>
+      {%endif%}
+    </button>
+
+    {%endif%}
+    <h2 class="char-name-h2">{{char.character.name}}</h2>
+    <p>{{short(char.character.description)}}</p>
+    <form action="/characters/{{char.character.id}}">
+      <button class="btn btn-outline-warning" type="submit">Details</button>
+    </form>
+  </div>
+  {%endfor%}
+</div>
+{%endblock%} {%block script%}
+<script src="/static/profile-fav.js"></script>
+{%endblock%}

@@ -1,0 +1,32 @@
+{%extends 'base.html'%}{%block title%}News{%endblock%} {%block style%}
+<link rel="stylesheet" href="/static/posts.css" />
+{%endblock%} {%block content%}
+<div class="container big-div">
+  <h1>News</h1>
+  {%if not posts%}
+  <br />
+  <p>No posts.</p>
+  {%endif%} {%for post in posts%}
+  <div class="post-div">
+    <p>{{post.text}} ({{post.user_id}})</p>
+
+    <button class="like-unlike" data-id="{{post.id}}">
+      {%if post.id in likes%}
+      <i class="fa-solid fa-thumbs-up" style="color: #005cfa"></i>
+      <span class="likes-count">{{ likes_count[post.id] }}</span>
+      {%else%}
+      <i class="fa-regular fa-thumbs-up" style="color: #005cfa"></i>
+      <span class="likes-count">{{ likes_count[post.id] }}</span>
+      {%endif%}
+    </button>
+
+    <p>{{post.friendly_date}}</p>
+    <form action="/posts/{{post.id}}/details">
+      <button class="btn btn-outline-success" type="submit">Details</button>
+    </form>
+  </div>
+  {%endfor%}
+</div>
+{%endblock%} {%block script%}
+<script src="/static/posts.js"></script>
+{%endblock%}

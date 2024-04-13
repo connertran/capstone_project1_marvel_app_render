@@ -1,0 +1,50 @@
+{%extends 'base.html'%}{%block title%}Details{%endblock%} {%block style%}
+<link rel="stylesheet" href="/static/post_details.css" />
+{%endblock%} {%block content%}
+<div class="container big-div">
+  <h1>Post</h1>
+  <div class="post-div">
+    <p>{{post.text}} ({{post.user_id}})</p>
+
+    <button class="like-unlike" data-id="{{post.id}}">
+      {%if liked%}
+      <i class="fa-solid fa-thumbs-up" style="color: #005cfa"></i>
+      <span>{{ likes_count[post.id] }}</span>
+      {%else%}
+      <i class="fa-regular fa-thumbs-up" style="color: #005cfa"></i>
+      <span>{{ likes_count[post.id] }}</span>
+      {%endif%}
+    </button>
+
+    <p>{{post.friendly_date}}</p>
+  </div>
+  <form action="">
+    <label class="form-label" for="comment">Comment:</label>
+    <textarea
+      name="comment"
+      class="form-control comment"
+      rows="2"
+      cols="50"
+    ></textarea>
+    <button
+      class="btn btn-outline-light comment-post-btn"
+      data-id="{{post.id}}"
+    >
+      Post
+    </button>
+  </form>
+
+  <h2 class="comment-h2">Comments:</h2>
+  <section class="comment-section">
+    {%for comment in post.comments%}
+    <div class="comment-div">
+      <b>{{comment.user_id}}</b>
+      <p>{{comment.text}}</p>
+      <p>{{comment.friendly_date}}</p>
+    </div>
+    {%endfor%}
+  </section>
+</div>
+{%endblock%} {%block script%}
+<script src="/static/post_details.js"></script>
+{%endblock%}

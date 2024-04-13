@@ -1,0 +1,188 @@
+.big-div {
+  background-color: rgb(30, 30, 30);
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
+  color: white;
+  border-radius: 20px;
+  padding: 10px 10px;
+  height: 580px;
+  overflow: scroll;
+  position: relative;
+}
+/* designing the scrollbar */
+/* for Chrome and Safari */
+::-webkit-scrollbar {
+  width: 1px;
+  height: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(128, 128, 128, 0);
+  border-radius: 10px;
+  height: 10px;
+}
+#profile-pic {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.user-info {
+  display: flex;
+  flex-direction: row;
+}
+.user-name-bio {
+  margin-left: 20px;
+}
+.details-description {
+  margin-bottom: 0;
+}
+.profile-btn-div {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+.edit-btn,
+.delete-btn,
+.add-btn {
+  margin-right: 5px;
+}
+.all-posts-div {
+  position: absolute;
+  right: 10px;
+  width: 620px;
+  height: 100%;
+  word-wrap: break-word;
+  overflow: scroll;
+}
+.post-div {
+  margin-bottom: 10px;
+  width: 600px;
+  padding: 10px;
+  border-radius: 6px;
+  background-color: rgb(52, 52, 52);
+}
+.post-text {
+  font-size: 18px;
+}
+.post-date {
+  font-size: 14px;
+}
+.post-delete-btn {
+  background-color: rgb(52, 52, 52);
+  border-style: none;
+  font-weight: 900;
+  color: rgba(255, 0, 0, 0.51);
+  padding: 0;
+  transition: color 0.3 ease;
+}
+.post-delete-btn:hover {
+  color: rgba(254, 44, 44, 0.596);
+}
+.character-section {
+  position: absolute;
+  right: 10px;
+  width: 620px;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+.character-thumbnail {
+  width: 100px;
+  border-radius: 4px;
+}
+.character-div {
+  border: solid rgba(128, 128, 128, 0.5) 1px;
+  border-radius: 6px;
+  margin-bottom: 5px;
+  padding: 4px;
+  padding-bottom: 10px;
+  width: 600px;
+  box-shadow: 0 0 3px rgba(128, 128, 128, 0.5);
+  transition: box-shadow 0.3s ease;
+}
+.character-div:hover {
+  box-shadow: 0 0 10px rgba(128, 128, 128, 0.7);
+}
+.like-unlike {
+  border: none;
+  background-color: rgb(30, 30, 30);
+  color: white;
+  font-size: 20px;
+}
+
+@media (max-width: 820px) {
+  .big-div {
+    display: flex;
+    flex-direction: column;
+    height: 800px;
+  }
+  .all-posts-div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
+    margin-left: 5px;
+    padding: 0px 5px;
+    word-wrap: break-word;
+    overflow: scroll;
+  }
+  .post-div {
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: rgb(52, 52, 52);
+  }
+  .character-section {
+    position: relative;
+    right: 10px;
+    width: 100%;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    height: 100%;
+    margin-left: 10px;
+    margin-top: 5px;
+  }
+  .character-div {
+    border: solid rgba(128, 128, 128, 0.5) 1px;
+    border-radius: 6px;
+    margin-bottom: 5px;
+    padding: 4px;
+    padding-bottom: 10px;
+    width: 100%;
+    box-shadow: 0 0 3px rgba(128, 128, 128, 0.5);
+    transition: box-shadow 0.3s ease;
+  }
+  .char-name-h2 {
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 390px) {
+  .big-div {
+    height: 730px;
+    width: 350px;
+    word-break: break-word;
+  }
+  #profile-pic {
+    width: 150px;
+    height: 225px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+  h1 {
+    font-size: 20px;
+  }
+  h3 {
+    font-size: 18px;
+  }
+  .char-name-h2 {
+    margin-top: 5px;
+  }
+}
