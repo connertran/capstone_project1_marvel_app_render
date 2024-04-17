@@ -1,3 +1,4 @@
+import os
 # The proposed favorite comics feature, although mentioned in the project proposal, was not implemented as it was deemed unnecessary for the project.
 from flask import Flask, redirect, render_template, session,flash, request,g, jsonify
 from flask_debugtoolbar import DebugToolbarExtension
@@ -17,7 +18,7 @@ def create_app(database_name, testing=False):
     app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql:///{database_name}'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['SQLALCHEMY_ECHO'] = True
-    app.config['SECRET_KEY'] = 'chicken123'
+    app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', "it's a secret")
     app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
     if testing:
         app.config["WTF_CSRF_ENABLED"] = False

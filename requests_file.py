@@ -1,3 +1,4 @@
+import os
 import requests
 import random
 from secret_info import ts, hashVal, api_public_key
@@ -6,9 +7,9 @@ from models import db, MarvelCharacters, ComicsCharacters, MarvelComics
 def get_character(character_name):
     url  = "https://gateway.marvel.com:443/v1/public/characters"
     resp = requests.get(url,
-                        params={"ts": ts,
-                                "apikey": api_public_key,
-                                "hash": hashVal,
+                        params={"ts": os.environ.get('TS', ts),
+                                "apikey": os.environ.get('API_KEY', api_public_key),
+                                "hash": os.environ.get('HASH_VAL', hashVal),
                                 "name": character_name})
 
     if len(resp.json()['data']["results"]) ==0:
@@ -36,9 +37,9 @@ def schuffle(lst):
 def get_character_comics(character_id):
     url  = f"https://gateway.marvel.com:443/v1/public/characters/{character_id}/comics"
     resp = requests.get(url,
-                        params={"ts": ts,
-                                "apikey": api_public_key,
-                                "hash": hashVal})
+                        params={"ts": os.environ.get('TS', ts),
+                                "apikey": os.environ.get('API_KEY', api_public_key),
+                                "hash": os.environ.get('HASH_VAL', hashVal)})
     if len(resp.json()['data']["results"]) ==0:
         return False
     else:
