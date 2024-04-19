@@ -7,7 +7,7 @@ bcrypt= Bcrypt()
 def connect_db(app):
     db.app = app
     db.init_app(app)
-    app.app_context().push()
+    db.create_all()
 
 
 #models go below here

@@ -15,7 +15,8 @@ from sqlalchemy import desc
 def create_app(database_name, testing=False):
     app = Flask(__name__)
 
-    app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql:///{database_name}'
+    # on Render, set the DATABASE_URL environment variable to the database connection string gotten from ElephantSQL.
+    app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL", f"postgresql:///{database_name}")
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['SQLALCHEMY_ECHO'] = True
     app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', "it's a secret")
@@ -495,5 +496,4 @@ def create_app(database_name, testing=False):
 if __name__ == '__main__':
     app = create_app('marvel_db')
     connect_db(app)
-    db.create_all()
     app.run(debug=True)
