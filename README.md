@@ -68,3 +68,38 @@ To utilize the Marvel API for fetching data, you need to follow a few essential 
   - The secret_text is created by you, as the API user. It can be any arbitrary value.
 
 - This hash, along with your public and private keys, will be used in all API requests to authenticate and pull data securely from Marvel's servers.
+
+## How to set up and run the project
+
+1. Obtain your API public key and private key from the Marvel API.
+2. Create a `secret_info.py` file. Inside this file, include the following information:
+
+   - `api_public_key`
+   - `api_private_key`
+   - `ts` (timestamp) or `secret_text`
+   - `hashVal` (generated hash using your secret text, private key, and public key)
+     Refer to the [Marvel's API link](https://developer.marvel.com/docs) section for more information about these values.
+
+3. In the terminal, navigate to the project folder and set up the virtual environment using the command: `python3 -m venv venv`  
+   Activate the virtual environment: `source venv/bin/activate`
+
+4. Install all the packages from the `requirements.txt` file by running the command: `pip install -r requirements.txt`
+
+5. Create two PostgreSQL databases for the project: one for the app (`marvel_db`) and one for app testing (`marvel_test`).
+
+#### Running the Project
+
+1. In the terminal, navigate to the project folder and run the command: `python3 -m app`
+2. Open a web browser and enter the following URL: http://127.0.0.1:5000/
+
+### Testing
+
+For testing, it is recommended to run individual test files due to the size of the app. Running individual test files makes it easier to identify and fix bugs rather than running all the tests at once, which may take a long time due to the duration of login and API data fetching.
+
+To run tests, execute the following command in the terminal: `python -m unittest [FILE NAME].py`
+
+- Replace `[FILE NAME]` with the name of the specific test file you want to run.
+
+## Deployed URL on Render
+
+[Deployed link.](https://capstone-project1-render.onrender.com)
