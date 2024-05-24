@@ -1,6 +1,6 @@
 # Marvel App
 
-I have broken down the Marvel App Project into easy-to-follow steps. Here’s a quick overview of what I did for each step of your capstone project.
+I have broken down the Marvel App Project into easy-to-follow steps. Here’s a quick overview of what I did for each step of my Marvel project.
 
 1. Step One: Initial Project Ideas: I’ll pick up to 3 project ideas to propose to my mentor and the Springboard community. I’ll also explore some potential APIs.
 2. Step Two: Project Proposal: For this step, I’ll write a proposal for the site I want to build. This will help my mentor better understand my chosen capstone project idea.
