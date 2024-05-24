@@ -53,6 +53,9 @@ This project aims to provide Marvel enthusiasts with a comprehensive tool to exp
 - Javascript, Jquery
 - AJAX (axios)
 
+## Improvements in the Future
+- Even though I finished this project, I noticed there are still improvements to be made. In the future, I plan to refactor the code in the main application file (app.py) by using Flask Blueprints.
+
 ## Marvel's API link
 
 [Here is the link to my API.](https://developer.marvel.com/docs)
