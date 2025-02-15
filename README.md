@@ -105,4 +105,6 @@ To run tests, execute the following command in the terminal: `python -m unittest
 
 ## Deployed URL on Render
 
+I'm sorry, but the deployed link may stop working. I recommend cloning the projects to your local computer using Git.
+
 [Deployed link.](https://capstone-project1-render.onrender.com)
